@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="result.php" method="POST">
+      <!-- <form action="result.php" method="post"> -->
+      <!-- お名前 -->
+      <label>お名前：<input type="text" name="order" /></label>
+      <br />
+      <!-- ご希望商品 -->
+      <label
+        >ご希望商品：<input type="radio" name="set" value="Aセット" />Aセット<input
+          type="radio"
+          name="set"
+          value="Bセット"
+        />Bセット<input type="radio" name="set" value="Cセット" />Cセット</label
+      >
+      <br />
+      <!-- 注文数 -->
+      <label>注文数：<input type="number" name="count" min="-1" /></label>
+      <!-- <label>注文数：<input type="number" name="count" value="" /></label> -->
+      <br />
+      <!-- 送信 -->
+      <input type="submit" name="submit" value="送信" />
+      <!-- <input type="submit" value="送信" /> -->
+    </form>
+  </body>
+</html>
