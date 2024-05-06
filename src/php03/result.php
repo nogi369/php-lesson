@@ -3,6 +3,10 @@
 require_once('functions/search_city_time.php');
 
 $tokyo = searchCityTime('東京');
+
+$city = htmlspecialchars($_GET['city'], ENT_QUOTES);
+$comparison = searchCityTime($city);
+
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -25,20 +29,28 @@ $tokyo = searchCityTime('東京');
       <div class="result-cards">
         <div class="result-card">
           <div class="result-card__img-wrapper">
-            <img class="result-card__img" src="img/" alt="国旗">
+            <img class="result-card__img" src="img/<?php echo $tokyo['img']?>" alt="国旗">
           </div>
           <div class="result-card__body">
-            <p class="result-card__city"></p>
-            <p class="result-card__time"></p>
+            <p class="result-card__city">
+              <?php echo $tokyo['name']?>
+            </p>
+            <p class="result-card__time">
+              <?php echo $tokyo['time']?>
+            </p>
           </div>
         </div>
         <div class="result-card">
           <div class="result-card__img-wrapper">
-            <img class="result-card__img" src="img/" alt="国旗">
+            <img class="result-card__img" src="img/<?php echo $comparison['img']?>" alt="国旗">
           </div>
           <div class="result-card__body">
-            <p class="result-card__city"></p>
-            <p class="result-card__time"></p>
+            <p class="result-card__city">
+              <?php echo $comparison['name']?>
+            </p>
+            <p class="result-card__time">
+              <?php echo $comparison['time']?>
+            </p>
           </div>
         </div>
       </div>
