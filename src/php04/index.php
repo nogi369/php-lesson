@@ -1,16 +1,13 @@
 <?php
 
-// 2. 順番入れ替え
 require_once('config/status_codes.php');
 
 $random_indexes = array_rand($status_codes, 4);
 
-// 3. 新しい配列の作成
 foreach($random_indexes as $index) {
   $options[] = $status_codes[$index];
 }
 
-// $question = $options[mt_rand(0, 3)];
 $question = $options[array_rand($options, 1)];
 
 ?>
